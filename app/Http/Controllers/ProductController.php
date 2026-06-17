@@ -1,49 +1,46 @@
-public function frontPage()
-{
-    return "Front Page";
-}
+namespace App\Http\Controllers;
 
-public function productList()
-{
-    return "Product List";
-}
+use Illuminate\Http\Request;
 
-public function productDetail($id)
+class ProductController extends Controller
 {
-    return "Product Detail " . $id;
-}
+    public function frontPage() {
+        return view('front');
+    }
 
-public function cart()
-{
-    return "Shopping Cart";
-}
+    public function productList() {
+        return view('product_list');
+    }
 
-public function order()
-{
-    return "Order Page";
-}
+    public function productDetail($id) {
+        return view('product_detail', ['id' => $id]);
+    }
 
-public function login()
-{
-    return "Login Page";
-}
+    public function cart() {
+        return view('cart');
+    }
 
-public function adminPanel()
-{
-    return "Admin Panel";
-}
+    public function order() {
+        return view('order');
+    }
 
-public function adminCategory()
-{
-    return "Admin Category";
-}
+    public function login() {
+        return view('login');
+    }
 
-public function adminProduct()
-{
-    return "Admin Product";
-}
+    public function adminPanel() {
+        return view('admin_panel');
+    }
 
-public function adminOrder()
-{
-    return "Admin Order";
+    public function adminCategory() {
+        return view('admin_category');
+    }
+
+    public function adminProduct() {
+        return view('admin_product');
+    }
+
+    public function adminOrder() {
+        return view('admin_order');
+    }
 }
